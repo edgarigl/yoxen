@@ -1,0 +1,61 @@
+header:
+  version: 11
+
+machine: qemuarm64
+distro: poky
+target:
+  - xen-image-minimal
+
+repos:
+  yoxen:
+
+  poky:
+    url: https://git.yoctoproject.org/git/poky
+    path: layers/poky
+    refspec: master
+    layers:
+      meta:
+      meta-poky:
+      meta-yocto-bsp:
+
+  meta-openembedded:
+    url: http://git.openembedded.org/meta-openembedded
+    path: layers/meta-openembedded
+    refspec: master
+    layers:
+      meta-oe:
+      meta-python:
+      meta-filesystems:
+      meta-networking:
+      meta-multimedia:
+
+  meta-virtualization:
+    url: http://git.yoctoproject.org/git/meta-virtualization
+    path: layers/meta-virtualization
+    refspec: master
+
+local_conf_header:
+  yoxen: |
+    #USER_CLASSES:append = " buildhistory buildstats buildstats-summary"
+    INHERIT:append = " rm_work own-mirrors"
+    RM_OLD_IMAGE = "1"
+    BB_GIT_SHALLOW = "1"
+    BB_GIT_SHALLOW_DEPTH = "1"
+    BB_GENERATE_SHALLOW_TARBALLS = "1"
+    PACKAGE_FEED_URIS = "http://10.0.2.2:8000/deploy/"
+    PACKAGE_FEED_BASE_PATHS = "ipk"
+    SOURCE_MIRROR_URL = "http://localhost:8000/downloads"
+  xen: |
+    DISTRO_FEATURES:append = " virtualization xen"
+    QEMU_TARGETS = "i386 aarch64"
+  fstypes: |
+    IMAGE_FSTYPES:append = " ext4 ext4.gz tar.bz2 cpio.gz cpio.gz.u-boot"
+  remove-ptest: |
+    DISTRO_FEATURES:remove = " ptest"
+  debug-tweaks: |
+    EXTRA_IMAGE_FEATURES = "debug-tweaks"
+  version: |
+    CONF_VERSION = "2"
+  shared-dl: |
+    DL_DIR = "${TOPDIR}/downloads/"
+    SSTATE_DIR = "${TOPDIR}/sstate-cache/"
