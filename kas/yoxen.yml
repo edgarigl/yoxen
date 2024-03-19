@@ -2,7 +2,7 @@ header:
   version: 11
 
 machine: qemuarm64
-distro: poky
+distro: yoxen
 target:
   - xen-image-minimal
 
@@ -48,14 +48,26 @@ local_conf_header:
   xen: |
     DISTRO_FEATURES:append = " virtualization xen"
     QEMU_TARGETS = "i386 aarch64"
+    NETWORK_XEN_BRIDGE = "0"
   fstypes: |
     IMAGE_FSTYPES:append = " ext4 ext4.gz tar.bz2 cpio.gz cpio.gz.u-boot"
   remove-ptest: |
     DISTRO_FEATURES:remove = " ptest"
   debug-tweaks: |
     EXTRA_IMAGE_FEATURES = "debug-tweaks"
+    IMAGE_INSTALL:append = " gdb strace"
+    IMAGE_INSTALL:append = " bridge-utils"
+    IMAGE_INSTALL:append = " ethtool"
   version: |
     CONF_VERSION = "2"
   shared-dl: |
     DL_DIR = "${TOPDIR}/downloads/"
     SSTATE_DIR = "${TOPDIR}/sstate-cache/"
+  custom-xen: |
+    PREFERRED_VERSION_xen = "4.19+git%"
+    PREFERRED_VERSION_xen-tools = "4.19+git%"
+    INHERIT:append = " externalsrc"
+    EXTERNALSRC:pn-xen = "/home/edgar/src/c/xen/xen"
+    EXTERNALSRC:pn-xen-tools = "/home/edgar/src/c/xen/xen"
+    EXTERNALSRC_BUILD:pn-xen = "/home/edgar/src/c/xen/xen"
+    EXTERNALSRC_BUILD:pn-xen-tools = "/home/edgar/src/c/xen/xen"
