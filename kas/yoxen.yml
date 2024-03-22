@@ -37,7 +37,7 @@ repos:
 local_conf_header:
   yoxen: |
     #USER_CLASSES:append = " buildhistory buildstats buildstats-summary"
-    INHERIT:append = " rm_work own-mirrors"
+    #INHERIT:append = " rm_work own-mirrors"
     RM_OLD_IMAGE = "1"
     BB_GIT_SHALLOW = "1"
     BB_GIT_SHALLOW_DEPTH = "1"
@@ -58,6 +58,7 @@ local_conf_header:
     IMAGE_INSTALL:append = " gdb strace"
     IMAGE_INSTALL:append = " bridge-utils"
     IMAGE_INSTALL:append = " ethtool"
+    IMAGE_INSTALL:append = " pciutils"
   version: |
     CONF_VERSION = "2"
   shared-dl: |
