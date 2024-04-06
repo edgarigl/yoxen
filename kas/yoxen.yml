@@ -52,6 +52,7 @@ local_conf_header:
     EXTRA_IMAGE_FEATURES = "debug-tweaks"
     IMAGE_INSTALL:append = " gdb strace"
     IMAGE_INSTALL:append = " bridge-utils"
+    IMAGE_INSTALL:append = " dropbear"
     IMAGE_INSTALL:append = " ethtool"
     IMAGE_INSTALL:append = " pciutils"
     IMAGE_INSTALL:append = " devmem2"
@@ -63,11 +64,3 @@ local_conf_header:
   shared-dl: |
     DL_DIR = "${TOPDIR}/downloads/"
     SSTATE_DIR = "${TOPDIR}/sstate-cache/"
-  custom-xen: |
-    PREFERRED_VERSION_xen = "4.19+git%"
-    PREFERRED_VERSION_xen-tools = "4.19+git%"
-    INHERIT:append = " externalsrc"
-    EXTERNALSRC:pn-xen = "/home/edgar/src/c/xen/xen"
-    EXTERNALSRC:pn-xen-tools = "/home/edgar/src/c/xen/xen"
-    EXTERNALSRC_BUILD:pn-xen = "/home/edgar/src/c/xen/xen"
-    EXTERNALSRC_BUILD:pn-xen-tools = "/home/edgar/src/c/xen/xen"

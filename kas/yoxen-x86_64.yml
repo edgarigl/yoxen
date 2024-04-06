@@ -7,3 +7,13 @@ machine: qemux86-64
 distro: yoxen
 target:
   - core-image-minimal
+
+local_conf_header:
+  custom-xen: |
+    PREFERRED_VERSION_xen = "4.19+git%"
+    PREFERRED_VERSION_xen-tools = "4.19+git%"
+    INHERIT:append = " externalsrc"
+    EXTERNALSRC:pn-xen = "/home/edgar/src/c/xen/xen-x86"
+    EXTERNALSRC:pn-xen-tools = "/home/edgar/src/c/xen/xen-x86"
+    EXTERNALSRC_BUILD:pn-xen = "/home/edgar/src/c/xen/xen-x86"
+    EXTERNALSRC_BUILD:pn-xen-tools = "/home/edgar/src/c/xen/xen-x86"
