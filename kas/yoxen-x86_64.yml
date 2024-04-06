@@ -4,3 +4,6 @@ header:
     - kas/yoxen.yml
 
 machine: qemux86-64
+distro: yoxen
+target:
+  - core-image-minimal
