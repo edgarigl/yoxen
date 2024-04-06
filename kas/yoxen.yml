@@ -56,6 +56,7 @@ local_conf_header:
     IMAGE_INSTALL:append = " pciutils"
     IMAGE_INSTALL:append = " devmem2"
     IMAGE_INSTALL:append = " qemu"
+    IMAGE_INSTALL:append = " xen-tools"
   version: |
     CONF_VERSION = "2"
   shared-dl: |
