@@ -1,7 +1,6 @@
 header:
   version: 11
 
-machine: qemuarm64
 distro: yoxen
 target:
   - xen-image-minimal
@@ -37,7 +36,7 @@ repos:
 local_conf_header:
   yoxen: |
     #USER_CLASSES:append = " buildhistory buildstats buildstats-summary"
-    #INHERIT:append = " rm_work own-mirrors"
+    INHERIT:append = " rm_work"
     RM_OLD_IMAGE = "1"
     BB_GIT_SHALLOW = "1"
     BB_GIT_SHALLOW_DEPTH = "1"
@@ -59,6 +58,7 @@ local_conf_header:
     IMAGE_INSTALL:append = " bridge-utils"
     IMAGE_INSTALL:append = " ethtool"
     IMAGE_INSTALL:append = " pciutils"
+    IMAGE_INSTALL:append = " devmem2"
   version: |
     CONF_VERSION = "2"
   shared-dl: |
