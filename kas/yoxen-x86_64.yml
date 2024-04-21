@@ -6,9 +6,11 @@ header:
 machine: qemux86-64
 distro: yoxen
 target:
-  - core-image-minimal
+  - xen-image-minimal
 
 local_conf_header:
+  arch-apps: |
+    IMAGE_INSTALL:append = " pmtools"
   custom-xen: |
     PREFERRED_VERSION_xen = "4.19+git%"
     PREFERRED_VERSION_xen-tools = "4.19+git%"
