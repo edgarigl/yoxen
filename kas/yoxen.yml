@@ -51,6 +51,7 @@ local_conf_header:
   debug-tweaks: |
     EXTRA_IMAGE_FEATURES = "debug-tweaks"
     IMAGE_INSTALL:append = " gdb strace"
+    IMAGE_INSTALL:append = " vim"
     IMAGE_INSTALL:append = " bridge-utils"
     IMAGE_INSTALL:append = " openssh"
     IMAGE_INSTALL:append = " ethtool"
