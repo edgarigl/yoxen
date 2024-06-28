@@ -32,52 +32,25 @@ For more details see the following:
 
 ## Usage
 
-### Create the SDK
+First, edit kas/yoxen-arm64.yml and kas/yoxen-x86_64.yml to point to your
+custom Xen repos.
 
-Clone the meta-zeroasic layer:
+To build an image for ARM64:
 ```bash
-mkdir sdk && cd sdk
-git clone git@github.com:zeroasiccorp/meta-zeroasic.git
+$ kas build kas/yoxen-arm64.yml
+
 ```
 
-Yocto cannot use passphrases when fetching dependencies, so be sure your ssh-agent is running and your github ssh-key has been added to it. This can be done using the following commands:
+To build an image for x86:
 ```bash
-eval "$(ssh-agent -s)"
-ssh-add .ssh/<your-key>
+$ kas build kas/yoxen-x86_64.yml
+
 ```
 
-Build the target images:
+Sometimes Xen and the Xen-tools fail to build due to some the subdirectory qemu-xen-dir being in some way not up to date. If this happens, try the following.
+
 ```bash
-kas build ./zeroasic-sdk/kas/zeroasic-sdk-image.yml
+$ touch your-xen-src/qemu-xen-dir
+$ kas shell kas/yoxen-arm64.yml -c "bitbake -c cleanall xen-tools"
+$ kas build kas/yoxen-arm64.yml
 ```
-
-Images will be created in build/tmp/deploy/images/efabric1/
-
-Running the image on QEMU
-```bash
-kas shell ./zeroasic-sdk/kas/zeroasic-sdk-image.yml -c "runqemu serialstdio slirp"
-```
-
-Press "CTRL-a x" to exit QEMU.
-
-Build the Extensible SDK:
-```bash
-kas shell ./zeroasic-sdk/kas/zeroasic-sdk-image.yml -c "bitbake -c populate_sdk_ext zeroasic-sdk-image"
-```
-
-The sdk will be created in build/tmp/deploy/sdk/
-
-If running the SDK on pre-historic hosts, you may need to install a buildtools package with
-up-to-date versions of build-essential packages. To create the buildtools-extendeded package,
-run the following:
-```bash
-kas shell ./zeroasic-sdk/kas/zeroasic-sdk-image.yml -c "bitbake buildtools-extended-tarball"
-```
-
-The buildtools-extended pacakage can be found in:
-```build/tmp/deploy/sdk/x86_64-buildtools-extended-nativesdk-standalone-2023.01.00.sh```
-
-# Other resources
-
-[improving-yocto-build-time](https://www.thegoodpenguin.co.uk/blog/improving-yocto-build-time/)
-[faq no network](https://wiki.yoctoproject.org/wiki/How_do_I)
