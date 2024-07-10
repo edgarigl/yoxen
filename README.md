@@ -54,3 +54,24 @@ $ touch your-xen-src/qemu-xen-dir
 $ kas shell kas/yoxen-arm64.yml -c "bitbake -c cleanall xen-tools"
 $ kas build kas/yoxen-arm64.yml
 ```
+
+### SDK
+
+To generate an SDK for ARM:
+```bash
+$ kas shell kas/yoxen-arm64.yml -c "bitbake -c populate_sdk core-image-minimal"
+```
+
+For x86:
+```bash
+$ kas shell kas/yoxen-x86_64.yml -c "bitbake -c populate_sdk xen-image-minimal"
+```
+
+
+
+## Ubuntu 2024
+
+If bitbake fails with permission denied, this is a workaround:
+```bash
+sudo apparmor_parser -R /etc/apparmor.d/unprivileged_userns
+```
