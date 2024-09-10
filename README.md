@@ -55,11 +55,18 @@ $ kas shell kas/yoxen-arm64.yml -c "bitbake -c cleanall xen-tools"
 $ kas build kas/yoxen-arm64.yml
 ```
 
+For domU's, you may not want to use xen-image-minmal. Build a non-Xen image with:
+```console
+$ kas shell kas/yoxen-arm64.yml -c "bitbake core-image-minimal"
+```
+This core-image-minimal will include the Xen libraries and tools but the init scripts won't be Xenified.
+You can ofcourse build a core-image-minimal without Xen libs and tools but then you'll have to edit the kas scripts.
+
 ### SDK
 
 To generate an SDK for ARM:
 ```bash
-$ kas shell kas/yoxen-arm64.yml -c "bitbake -c populate_sdk core-image-minimal"
+$ kas shell kas/yoxen-arm64.yml -c "bitbake -c populate_sdk xen-image-minimal"
 ```
 
 For x86:

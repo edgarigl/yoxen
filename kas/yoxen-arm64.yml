@@ -3,10 +3,14 @@ header:
   includes:
     - kas/yoxen.yml
 
+# When booting from initrd you may need to use core-image-minial
+# to get smaller rootfs that fits into reasonably sized guests.
+# In particular if you're running multiple QEMU's with multiple
+# Xen instances on a laptop.
 machine: qemuarm64
 distro: yoxen
 target:
-  - core-image-minimal
+  - xen-image-minimal
 
 local_conf_header:
   custom-xen: |
