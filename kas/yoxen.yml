@@ -7,7 +7,7 @@ repos:
   poky:
     url: https://git.yoctoproject.org/git/poky
     path: layers/poky
-    refspec: 058465859ed5a62997bb9424e8eb88b543f43a86
+    commit: 058465859ed5a62997bb9424e8eb88b543f43a86
     layers:
       meta:
       meta-poky:
@@ -16,7 +16,7 @@ repos:
   meta-openembedded:
     url: http://git.openembedded.org/meta-openembedded
     path: layers/meta-openembedded
-    refspec: 0c4079fc28cc36cb2dbfe48093f2cf64106f8b5d
+    commit: 0c4079fc28cc36cb2dbfe48093f2cf64106f8b5d
     layers:
       meta-oe:
       meta-python:
@@ -27,7 +27,7 @@ repos:
   meta-virtualization:
     url: http://git.yoctoproject.org/git/meta-virtualization
     path: layers/meta-virtualization
-    refspec: e96da98e4038f5388596b4294ac3d8425b2dacb2
+    commit: e96da98e4038f5388596b4294ac3d8425b2dacb2
 
 local_conf_header:
   yoxen: |
