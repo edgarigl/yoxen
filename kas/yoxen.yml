@@ -68,6 +68,7 @@ local_conf_header:
     #    IMAGE_INSTALL:append = " xen-tools"
     #    IMAGE_INSTALL:append = " acpica"
     IMAGE_INSTALL:append = " memtester"
+    IMAGE_INSTALL:append = " tcf-agent"
   version: |
     CONF_VERSION = "2"
   shared-dl: |
