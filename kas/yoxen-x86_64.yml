@@ -10,6 +10,7 @@ target:
 
 local_conf_header:
   arch-apps: |
+    IMAGE_INSTALL:append = " virtio-msg-demo-x86"
     IMAGE_INSTALL:append = " pmtools"
   custom-xen: |
     PREFERRED_VERSION_xen = "4.19+git%"
