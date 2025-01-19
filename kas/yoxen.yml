@@ -7,7 +7,7 @@ repos:
   poky:
     url: https://git.yoctoproject.org/git/poky
     path: layers/poky
-    commit: 058465859ed5a62997bb9424e8eb88b543f43a86
+    commit: f636d6eed72091fc2672f78eb0f5bf319b3d390f
     layers:
       meta:
       meta-poky:
@@ -16,7 +16,7 @@ repos:
   meta-openembedded:
     url: http://git.openembedded.org/meta-openembedded
     path: layers/meta-openembedded
-    commit: 0c4079fc28cc36cb2dbfe48093f2cf64106f8b5d
+    commit: b8d1a14f7f3b76457c36752202ea7ae5881b6654
     layers:
       meta-oe:
       meta-python:
@@ -27,14 +27,14 @@ repos:
   meta-virtualization:
     url: http://git.yoctoproject.org/git/meta-virtualization
     path: layers/meta-virtualization
-    commit: e96da98e4038f5388596b4294ac3d8425b2dacb2
+    commit: e9bb0a338fdf637f7929e19b21857d4c1d532ce6
 
 local_conf_header:
   yoxen: |
     #USER_CLASSES:append = " buildhistory buildstats buildstats-summary"
     INHERIT:append = " rm_work"
     RM_OLD_IMAGE = "1"
-    BB_GIT_SHALLOW = "1"
+    #    BB_GIT_SHALLOW = "1"
     BB_GIT_SHALLOW_DEPTH = "1"
     BB_GENERATE_SHALLOW_TARBALLS = "1"
     PACKAGE_FEED_URIS = "http://10.0.2.2:8000/deploy/"
