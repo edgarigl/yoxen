@@ -10,13 +10,16 @@ Scripts to monitor PCI FLRs, setup networking and run QEMU.
 ## Build images
 
 First, you'll need to setup kas. See the [kas-setup](../README.md) for more information.
-
+Once kas is setup, you need to run:
 ```console
 $ kas build kas/yoxen-versal-virtio-msg-demo.yml
 ```
 
 ## Build SDK
 
+If you'd like to compile custom applications for the target outside
+of the Yocto environment, you can build an SDK that targets the rootfs
+corresponding to the virtio-msg-demo-image:
 ```bash
 $ kas shell kas/yoxen-versal-virtio-msg-demo.yml -c "bitbake -c populate_sdk versal-virtio-msg-demo-image"
 ```
