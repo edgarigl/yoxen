@@ -32,6 +32,12 @@ For more details see the following:
 
 ## Usage
 
+Some setups are ready to build as is, follow the respective instructions:
+[versal-virtio-msg-demo](docs/README.versal-virtio-msg-demo.md)
+
+Other images are meant to be used during development and will need you to
+modify some paths.
+
 First, edit kas/yoxen-arm64.yml and kas/yoxen-x86_64.yml to point to your
 custom Xen repos.
 
