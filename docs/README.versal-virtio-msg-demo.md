@@ -7,6 +7,20 @@ A UIO kernel module allowing user-space drivers to map memory ranges as
 Non-Cached Normal Memory.
 Scripts to monitor PCI FLRs, setup networking and run QEMU.
 
+## Build images
+
+First, you'll need to setup kas. See the [kas-setup](../README.md) for more information.
+
+```console
+$ kas build kas/yoxen-versal-virtio-msg-demo.yml
+```
+
+## Build SDK
+
+```bash
+$ kas shell kas/yoxen-versal-virtio-msg-demo.yml -c "bitbake -c populate_sdk versal-virtio-msg-demo-image"
+```
+
 ## Running
 
 Once the image boots, it will automatically run the pci-flr-monitor script.
@@ -43,17 +57,4 @@ udhcpc: broadcasting discover
 udhcpc: broadcasting select for 10.0.6.143, server 10.0.6.1
 udhcpc: lease of 10.0.6.143 obtained from 10.0.6.1, lease time 43200
 /etc/udhcpc.d/50default: Adding DNS 10.0.6.1
-
-```
-
-## Build images
-
-```console
-$ kas build kas/yoxen-versal-virtio-msg-demo.yml
-```
-
-## Build SDK
-
-```bash
-$ kas shell kas/yoxen-versal-virtio-msg-demo.yml -c "bitbake -c populate_sdk versal-virtio-msg-demo-image"
 ```
