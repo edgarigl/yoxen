@@ -1,0 +1,56 @@
+header:
+  version: 11
+  includes:
+    - kas/yoxen.yml
+
+machine: versal-generic
+distro: yoxen
+target:
+  - versal-virtio-msg-demo-image
+
+repos:
+  yoxen:
+
+  meta-xilinx:
+    url: https://github.com/Xilinx/meta-xilinx.git
+    path: layers/meta-xilinx
+    commit: 4c406f5db39d2a255dc86e87dd8ffed2770722b5
+    layers:
+      meta-xilinx-core:
+      meta-xilinx-standalone:
+      meta-xilinx-bsp:
+      meta-xilinx-virtualization:
+
+  meta-security:
+    url: https://git.yoctoproject.org/git/meta-security
+    path: layers/meta-security
+    commit: bc865c5276c2ab4031229916e8d7c20148dfbac3
+    layers:
+      ../meta-security:
+      meta-tpm:
+
+  meta-arm:
+    url: https://git.yoctoproject.org/git/meta-arm
+    path: layers/meta-arm
+    commit: a8fe9d22eaefc294f91096c6a32663e2f4ab3b10
+    layers:
+      meta-arm:
+      meta-arm-toolchain:
+
+  meta-openamp:
+    url: https://github.com/Xilinx/meta-openamp.git
+    path: layers/meta-openamp
+    commit: 68049285b561f071bd7cc093f9ecbe4f5518ddf9
+
+  meta-virtio-msg-demo:
+    url: https://github.com/edgarigl/meta-virtio-msg-demo.git
+    path: layers/meta-virtio-msg-demo
+    commit: f5f07560e6be893e2adf08287d04c660e19507cf
+
+local_conf_header:
+  virtio-msg: |
+    # Uncomment if you accept the Xilinx PMU license.
+    #        LICENSE_FLAGS_ACCEPTED:append = " xilinx"
+    # We want upstream QEMU + virtio-msg patches (not Xilinx QEMU).
+    DEFAULT_XILINX_QEMU:aarch64 = "qemu"
+    QEMU_TARGETS = "aarch64"
