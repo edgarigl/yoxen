@@ -24,7 +24,7 @@ $ kas shell kas/yoxen-versal-virtio-msg-demo.yml -c "bitbake -c populate_sdk ver
 ## Running
 
 Once the image boots, it will automatically run the pci-flr-monitor script.
-Users need to run the ```run-versal-virtio-msg-net-backend.sh``` script to start QEMU:
+Users need to run the ``run-versal-virtio-msg-net-backend.sh`` script to start QEMU:
 ```console
 $ run-versal-virtio-msg-net-backend.sh 
 + qemu-system-aarch64 -M x-virtio-msg -m 2G -serial null -display none -daemonize -device virtio-msg-bus-vek280-hexcam,dev=/dev/uio0,spsc-base=0xa210000 -device virtio-net-device,mq=on,netdev=net0,iommu_platform=on -netdev tap,id=net0,ifname=tap0,script=no,downscript=no
