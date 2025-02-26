@@ -45,12 +45,17 @@ repos:
   meta-virtio-msg-demo:
     url: https://github.com/edgarigl/meta-virtio-msg-demo.git
     path: layers/meta-virtio-msg-demo
-    commit: 59638d6a96ad8976d448c97a99ff890ce27f6566
+    commit: 8f47973111f052192f44be9c1e9d7f42c8a3203b
 
 local_conf_header:
+  fstypes: |
+    IMAGE_FSTYPES:append = " wic"
   virtio-msg: |
     # Uncomment if you accept the Xilinx PMU license.
     #        LICENSE_FLAGS_ACCEPTED:append = " xilinx"
     # We want upstream QEMU + virtio-msg patches (not Xilinx QEMU).
     DEFAULT_XILINX_QEMU:aarch64 = "qemu"
+    # When changing version, you need to clean kernel and modules
+    # kas shell kas/yoxen-versal-virtio-msg-demo.yml -c "bitbake -c cleansstate linux-xlnx uio-nc-mem-mod"
+    XILINX_RELEASE_VERSION = "v2024.1"
     QEMU_TARGETS = "aarch64"
