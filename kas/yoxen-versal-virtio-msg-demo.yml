@@ -49,7 +49,7 @@ repos:
 
 local_conf_header:
   fstypes: |
-    IMAGE_FSTYPES:append = " wic"
+    IMAGE_FSTYPES:append = " wic wic.qcow2"
   virtio-msg: |
     # Uncomment if you accept the Xilinx PMU license.
     #        LICENSE_FLAGS_ACCEPTED:append = " xilinx"
