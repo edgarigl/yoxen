@@ -13,8 +13,6 @@ target:
   - xen-image-minimal
 
 local_conf_header:
-  arch-apps: |
-        IMAGE_INSTALL:append = " virtio-msg-demo-aarch64"
   custom-xen: |
     PREFERRED_VERSION_xen = "4.18+stable"
     PREFERRED_VERSION_xen-tools = "4.18+stable"
@@ -23,3 +21,7 @@ local_conf_header:
     #EXTERNALSRC:pn-xen-tools = "/home/edgar/src/c/xen/xen"
     #EXTERNALSRC_BUILD:pn-xen = "/home/edgar/src/c/xen/xen"
     #EXTERNALSRC_BUILD:pn-xen-tools = "/home/edgar/src/c/xen/xen"
+
+# removed
+#  arch-apps: |
+#        IMAGE_INSTALL:append = " virtio-msg-demo-aarch64"

@@ -10,7 +10,6 @@ target:
 
 local_conf_header:
   arch-apps: |
-    IMAGE_INSTALL:append = " virtio-msg-demo-x86"
     IMAGE_INSTALL:append = " pmtools"
   custom-xen: |
     PREFERRED_VERSION_xen = "4.19+git%"
@@ -20,3 +19,6 @@ local_conf_header:
     EXTERNALSRC:pn-xen-tools = "/home/edgar/src/c/xen/xen-x86"
     EXTERNALSRC_BUILD:pn-xen = "/home/edgar/src/c/xen/xen-x86"
     EXTERNALSRC_BUILD:pn-xen-tools = "/home/edgar/src/c/xen/xen-x86"
+
+# removed
+#    IMAGE_INSTALL:append = " virtio-msg-demo-x86"
