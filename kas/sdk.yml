@@ -1,0 +1,10 @@
+header:
+  version: 9
+
+build_system: oe
+
+local_conf_header:
+  sdk-extra-packages: |
+    IMAGE_INSTALL:append = " qemu "
+
+task: populate_sdk
