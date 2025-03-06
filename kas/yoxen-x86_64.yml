@@ -11,10 +11,10 @@ target:
 local_conf_header:
   arch-apps: |
     IMAGE_INSTALL:append = " pmtools"
-  custom-xen: |
-    PREFERRED_VERSION_xen = "4.19+git%"
-    PREFERRED_VERSION_xen-tools = "4.19+git%"
-    INHERIT:append = " externalsrc"
+# custom-xen: |
+#    PREFERRED_VERSION_xen = "4.19+git%"
+#    PREFERRED_VERSION_xen-tools = "4.19+git%"
+#    INHERIT:append = " externalsrc"
 
 #    EXTERNALSRC:pn-xen = "/home/edgar/src/c/xen/xen-x86"
 #    EXTERNALSRC:pn-xen-tools = "/home/edgar/src/c/xen/xen-x86"
