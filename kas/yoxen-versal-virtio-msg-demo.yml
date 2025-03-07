@@ -45,7 +45,7 @@ repos:
   meta-virtio-msg-demo:
     url: https://github.com/edgarigl/meta-virtio-msg-demo.git
     path: layers/meta-virtio-msg-demo
-    commit: 1aaa15cf2882d79bfbb9dd3f690533d56cc01b38
+    commit: 82543b4abe0f2e5a69c8c2a29005aa3d14e97e02
 
 local_conf_header:
   fstypes: |
@@ -59,3 +59,7 @@ local_conf_header:
     # kas shell kas/yoxen-versal-virtio-msg-demo.yml -c "bitbake -c cleansstate linux-xlnx uio-nc-mem-mod"
     XILINX_RELEASE_VERSION = "v2024.1"
     QEMU_TARGETS = "aarch64"
+    CONFIG_DTFILE = "${TOPDIR}/../layers/meta-virtio-msg-demo/dts/system.dts"
+    EXTRA_DT_FILES = "${TOPDIR}/../layers/meta-virtio-msg-demo/dts/overlay-virtio-msg.dtsi"
+    EXTRA_DT_FILES:append = " ${TOPDIR}/../layers/meta-virtio-msg-demo/dts/overlay-xen.dtsi"
+    EXTRA_DT_FILES:append = " ${TOPDIR}/../layers/meta-virtio-msg-demo/dts/system-user.dtsi"
