@@ -3,7 +3,7 @@ header:
   includes:
     - kas/yoxen.yml
 
-machine: qemux86-64
+machine: genericx86-64
 distro: yoxen
 target:
   - xen-image-minimal
