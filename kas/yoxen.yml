@@ -32,6 +32,7 @@ repos:
 local_conf_header:
   yoxen: |
     #USER_CLASSES:append = " buildhistory buildstats buildstats-summary"
+    USER_CLASSES:append = " buildstats buildstats-summary"
     INHERIT:append = " rm_work"
     RM_OLD_IMAGE = "1"
     #    BB_GIT_SHALLOW = "1"
