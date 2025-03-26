@@ -21,7 +21,3 @@ local_conf_header:
     #EXTERNALSRC:pn-xen-tools = "/home/edgar/src/c/xen/xen"
     #EXTERNALSRC_BUILD:pn-xen = "/home/edgar/src/c/xen/xen"
     #EXTERNALSRC_BUILD:pn-xen-tools = "/home/edgar/src/c/xen/xen"
-
-# removed
-#  arch-apps: |
-#        IMAGE_INSTALL:append = " virtio-msg-demo-aarch64"
