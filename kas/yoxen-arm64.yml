@@ -14,8 +14,8 @@ target:
 
 local_conf_header:
   custom-xen: |
-    PREFERRED_VERSION_xen = "4.18+stable"
-    PREFERRED_VERSION_xen-tools = "4.18+stable"
+    PREFERRED_VERSION_xen = "4.19.0+stable%"
+    PREFERRED_VERSION_xen-tools = "4.19+stable%"
     INHERIT:append = " externalsrc"
     #    EXTERNALSRC:pn-xen = "/home/edgar/src/c/xen/xen"
     #EXTERNALSRC:pn-xen-tools = "/home/edgar/src/c/xen/xen"
