@@ -14,7 +14,8 @@ repos:
   meta-xilinx:
     url: https://github.com/Xilinx/meta-xilinx.git
     path: layers/meta-xilinx
-    commit: 4c406f5db39d2a255dc86e87dd8ffed2770722b5
+    #branch: scarthgap
+    commit: 936845b97ab1ff035108f219f4e7cfef5401eb02
     layers:
       meta-xilinx-core:
       meta-xilinx-standalone:
@@ -24,6 +25,7 @@ repos:
   meta-security:
     url: https://git.yoctoproject.org/git/meta-security
     path: layers/meta-security
+    #branch: scarthgap
     commit: bc865c5276c2ab4031229916e8d7c20148dfbac3
     layers:
       ../meta-security:
@@ -32,7 +34,8 @@ repos:
   meta-arm:
     url: https://git.yoctoproject.org/git/meta-arm
     path: layers/meta-arm
-    commit: a8fe9d22eaefc294f91096c6a32663e2f4ab3b10
+    #branch: scarthgap
+    commit: 8e0f8af90fefb03f08cd2228cde7a89902a6b37c
     layers:
       meta-arm:
       meta-arm-toolchain:
@@ -40,7 +43,7 @@ repos:
   meta-openamp:
     url: https://github.com/Xilinx/meta-openamp.git
     path: layers/meta-openamp
-    commit: 68049285b561f071bd7cc093f9ecbe4f5518ddf9
+    commit: e44e4a3b4abe9cc5fdfe75c43181ba82750f6865
 
   meta-virtio-msg-demo:
     url: https://github.com/edgarigl/meta-virtio-msg-demo.git

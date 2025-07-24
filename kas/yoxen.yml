@@ -7,7 +7,8 @@ repos:
   poky:
     url: https://git.yoctoproject.org/git/poky
     path: layers/poky
-    commit: f636d6eed72091fc2672f78eb0f5bf319b3d390f
+    #branch: scarthgap
+    commit: 792d18b4cb2451b00280641403e6eaf37bd6e53f
     layers:
       meta:
       meta-poky:
@@ -16,7 +17,8 @@ repos:
   meta-openembedded:
     url: http://git.openembedded.org/meta-openembedded
     path: layers/meta-openembedded
-    commit: b8d1a14f7f3b76457c36752202ea7ae5881b6654
+    #branch: scarthgap
+    commit: e8fd97d86af86cdcc5a6eb3f301cbaf6a2084943
     layers:
       meta-oe:
       meta-python:
@@ -27,7 +29,8 @@ repos:
   meta-virtualization:
     url: http://git.yoctoproject.org/git/meta-virtualization
     path: layers/meta-virtualization
-    commit: 0c191912421adff2f753e470056a9a525fbce760
+    #branch: scarthgap
+    commit: a5449c0c50aa07d02186f548fe6bb6c1ce8823dc
 
 local_conf_header:
   yoxen: |
