@@ -48,7 +48,7 @@ repos:
   meta-virtio-msg-demo:
     url: https://github.com/edgarigl/meta-virtio-msg-demo.git
     path: layers/meta-virtio-msg-demo
-    commit: 82543b4abe0f2e5a69c8c2a29005aa3d14e97e02
+    commit: f7934afff0a10e42b65ed8a12ee9d441d11d1519
 
 local_conf_header:
   fstypes: |
