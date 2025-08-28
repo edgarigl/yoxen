@@ -47,6 +47,11 @@ local_conf_header:
     BB_NUMBER_THREADS = "3"
     PARALLEL_MAKE = "-j 5"
     PACKAGE_CLASSES = "package_ipk"
+    # Use much lighter compression & fewer resources for all xz calls
+    XZ_MEMLIMIT = "40%"
+    XZ_THREADS = "4"
+    # Prefer speed over compression 0 - 9
+    SDK_XZ_COMPRESSION_LEVEL = "-1"
   xen: |
     #DISTRO_FEATURES:append = " virtualization xen"
     DISTRO_FEATURES:append = " virtualization"
